@@ -1,0 +1,164 @@
+{
+  "is_demo_data": true,
+  "versions": [
+    {
+      "id": "parse-v1.0.0",
+      "task": "parse",
+      "status": "full",
+      "author": "教研-张",
+      "created_at": "2024-09-01T08:00:00Z",
+      "changelog": "初版视觉解析模板",
+      "template_file": "parse.tmpl",
+      "canary_ratio": 0,
+      "linked_eval_report_id": "eval-parse-baseline",
+      "gate_passed": true
+    },
+    {
+      "id": "attribute-v1.0.0",
+      "task": "attribute",
+      "status": "full",
+      "author": "教研-李",
+      "created_at": "2024-09-01T08:00:00Z",
+      "changelog": "归因基线版本",
+      "template_file": "attribute.tmpl",
+      "canary_ratio": 0,
+      "linked_eval_report_id": "eval-attr-baseline",
+      "gate_passed": true
+    },
+    {
+      "id": "attribute-v1.1.0",
+      "task": "attribute",
+      "status": "canary",
+      "author": "教研-李",
+      "created_at": "2024-10-01T08:00:00Z",
+      "changelog": "增强 few-shot 与分步思考",
+      "template_file": "attribute.tmpl",
+      "canary_ratio": 0.1,
+      "linked_eval_report_id": "eval-attr-v110",
+      "gate_passed": true
+    },
+    {
+      "id": "attribute-v1.2.0-draft",
+      "task": "attribute",
+      "status": "draft",
+      "author": "教研-王",
+      "created_at": "2024-10-20T08:00:00Z",
+      "changelog": "试验性措辞调整，尚未评测",
+      "template_file": "attribute.tmpl",
+      "canary_ratio": 0,
+      "linked_eval_report_id": null,
+      "gate_passed": false
+    },
+    {
+      "id": "generate-v1.0.0",
+      "task": "generate",
+      "status": "full",
+      "author": "教研-张",
+      "created_at": "2024-09-01T08:00:00Z",
+      "changelog": "分层练习生成初版",
+      "template_file": "generate.tmpl",
+      "canary_ratio": 0,
+      "linked_eval_report_id": "eval-gen-baseline",
+      "gate_passed": true
+    }
+  ],
+  "change_log": [
+    {
+      "at": "2024-10-01T08:00:00Z",
+      "author": "教研-李",
+      "action": "attribute-v1.1.0 进入灰度 10%",
+      "version_id": "attribute-v1.1.0"
+    },
+    {
+      "at": "2024-09-01T08:00:00Z",
+      "author": "教研-张",
+      "action": "parse/attribute/generate 基线全量",
+      "version_id": "attribute-v1.0.0"
+    }
+  ],
+  "eval_reports": [
+    {
+      "id": "eval-attr-baseline",
+      "prompt_version": "attribute-v1.0.0",
+      "dataset_version": "v1",
+      "metrics": {
+        "error_tag_acc": 0.88,
+        "knowledge_top1": 0.86,
+        "knowledge_top3_recall": 0.94,
+        "out_of_syllabus": 0.02,
+        "duplicate_rate": 0.03
+      },
+      "gate_passed": true,
+      "created_at": "2024-09-02T10:00:00Z"
+    },
+    {
+      "id": "eval-attr-v110",
+      "prompt_version": "attribute-v1.1.0",
+      "dataset_version": "v1",
+      "metrics": {
+        "error_tag_acc": 0.9,
+        "knowledge_top1": 0.87,
+        "knowledge_top3_recall": 0.95,
+        "out_of_syllabus": 0.02,
+        "duplicate_rate": 0.02
+      },
+      "gate_passed": true,
+      "created_at": "2024-10-01T09:00:00Z"
+    },
+    {
+      "id": "eval-parse-baseline",
+      "prompt_version": "parse-v1.0.0",
+      "dataset_version": "v1",
+      "metrics": {
+        "error_tag_acc": 0.9,
+        "knowledge_top1": 0.9,
+        "knowledge_top3_recall": 0.95,
+        "out_of_syllabus": 0.01,
+        "duplicate_rate": 0.01
+      },
+      "gate_passed": true,
+      "created_at": "2024-09-02T10:00:00Z"
+    },
+    {
+      "id": "eval-gen-baseline",
+      "prompt_version": "generate-v1.0.0",
+      "dataset_version": "v1",
+      "metrics": {
+        "error_tag_acc": 0.86,
+        "knowledge_top1": 0.85,
+        "knowledge_top3_recall": 0.92,
+        "out_of_syllabus": 0.03,
+        "duplicate_rate": 0.04
+      },
+      "gate_passed": true,
+      "created_at": "2024-09-02T10:00:00Z"
+    }
+  ],
+  "review_queue": [
+    {
+      "id": "RQ-E001",
+      "error_id": "E001",
+      "question_text": "解方程 x²-5x+6=0",
+      "student_answer": "x=2",
+      "correct_answer": "x=2 或 x=3",
+      "predicted_error_tag": "概念混淆",
+      "predicted_knowledge_id": "M9-C2-K3",
+      "confidence": 0.52,
+      "status": "pending",
+      "student_id": "S2024-01"
+    },
+    {
+      "id": "RQ-E002",
+      "error_id": "E002",
+      "question_text": "解方程 2x²-3x-2=0",
+      "student_answer": "x=2",
+      "correct_answer": "x=2 或 x=-1/2",
+      "predicted_error_tag": "计算错误",
+      "predicted_knowledge_id": "M9-C2-K4",
+      "confidence": 0.55,
+      "status": "pending",
+      "student_id": "S2024-01"
+    }
+  ],
+  "candidate_eval_items": []
+}

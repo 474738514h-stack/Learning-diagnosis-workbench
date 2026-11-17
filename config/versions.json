@@ -1,0 +1,21 @@
+{
+  "is_demo_data": true,
+  "tasks": {
+    "parse": {
+      "active_version": "parse-v1.0.0",
+      "canary_version": null,
+      "canary_ratio": 0
+    },
+    "attribute": {
+      "active_version": "attribute-v1.0.0",
+      "canary_version": "attribute-v1.1.0",
+      "canary_ratio": 0.1
+    },
+    "generate": {
+      "active_version": "generate-v1.0.0",
+      "canary_version": null,
+      "canary_ratio": 0
+    }
+  },
+  "request_log": []
+}
