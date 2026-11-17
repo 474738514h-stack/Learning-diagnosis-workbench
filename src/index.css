@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.card {
+  @apply rounded-card border border-border bg-white shadow-card;
+}
+
+.btn-secondary {
+  @apply rounded-lg border border-border bg-white px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.btn-primary {
+  @apply rounded-lg bg-brand px-3 py-1.5 text-sm font-medium text-white hover:bg-brand/90 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.field {
+  @apply w-full rounded-lg border border-border bg-white px-3 py-2 text-sm text-gray-900 outline-none focus:border-brand;
+}
+
+.fade-in {
+  animation: fade-in 0.2s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
