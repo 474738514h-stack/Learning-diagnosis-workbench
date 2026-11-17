@@ -1,0 +1,7 @@
+{
+  "is_demo_data": true,
+  "attribution_accuracy_min": 0.85,
+  "baseline_drop_max_pt": 2,
+  "out_of_syllabus_rate_max": 0.05,
+  "baseline_version": "attribute-v1.0.0"
+}

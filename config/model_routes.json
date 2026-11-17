@@ -1,0 +1,23 @@
+{
+  "is_demo_data": true,
+  "routes": {
+    "parse": {
+      "model": "mock-vision-v1",
+      "temperature": 0.1,
+      "timeout_ms": 3000,
+      "retries": 1
+    },
+    "attribute": {
+      "model": "mock-text-v1",
+      "temperature": 0.2,
+      "timeout_ms": 4000,
+      "retries": 2
+    },
+    "generate": {
+      "model": "mock-text-v1",
+      "temperature": 0.4,
+      "timeout_ms": 5000,
+      "retries": 1
+    }
+  }
+}
